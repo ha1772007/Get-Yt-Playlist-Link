@@ -1,0 +1,17 @@
+name: Generate Copy Text Button
+
+on:
+  push:
+    branches:
+      - main  # Change this to your default branch
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Generate README
+        run: echo -e "\`\`\`bash\n$(cat README.md)\n\`\`\`" > README.md
